@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: hsl(229, 57%, 11%);
+        font-family: "Raleway", sans-serif;
+        background-image: url("images/bg-desktop.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-attachment: fixed;
+        background-size: contain;
+        overflow: hidden;
+      }
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .fylo-container {
+        background-color: hsl(228, 56%, 26%);
+        padding: 2.2rem 6.2rem 2.2rem 2.8rem;
+        border-radius: 1rem 40% 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .icon-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.8rem;
+        background-color: hsl(229, 57%, 11%);
+        border-radius: 10px;
+      }
+
+      .img:nth-child(3) {
+        padding: 1rem 0.8rem;
+      }
+      .img:nth-child(2) {
+        padding: 0.9rem 0.8rem;
+      }
+
+      .rec {
+        background-color: hsl(228, 56%, 26%);
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 32rem;
+        position: relative;
+      }
+
+      .progress {
+        padding: 0.07rem;
+        border: 2px solid hsl(229, 57%, 11%);
+        border-radius: 15px;
+        width: 100%;
+        height: 1.2rem;
+        background-color: hsl(229, 57%, 11%);
+      }
+
+      .progress_bar {
+        height: 100%;
+        width: 70%;
+        background: linear-gradient(
+          45deg,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+        border-radius: 15px;
+        position: relative;
+      }
+
+      .progress_point {
+        padding: 0.2rem;
+        border-radius: 100%;
+        background-color: hsl(243, 100%, 93%);
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        transform: translate(-1%, -50%);
+      }
+
+      .pra {
+        font-size: 14px;
+        color: hsl(229, 7%, 55%);
+        margin-bottom: 0.8rem;
+      }
+
+      .from_to {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .GB {
+        color: hsl(243, 100%, 93%);
+        font-size: 0.6rem;
+        font-weight: 700;
+        margin-top: 0.4rem;
+      }
+      .pra span {
+        font-weight: 700;
+        color: hsl(243, 100%, 93%);
+      }
+
+      .gb_left {
+        padding: 1rem;
+        width: 11rem;
+        background-color: hsl(0, 100%, 100%);
+        border-radius: 1rem;
+        position: absolute;
+        top: -25%;
+        left: 58%;
+      }
+      .gb_left::after {
+        content: "";
+        position: absolute;
+        padding: 1rem;
+        top: 67%;
+        left: 85.2%;
+        background-color: hsl(0, 100%, 100%);
+        clip-path: polygon(18% 6px, 99% 6px, 71% 79%);
+        transform: rotate(90deg);
+      }
+      .pra_gb_left {
+        color: hsl(229, 7%, 55%);
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .pra_gb_left span {
+        color: hsl(0, 0%, 0%);
+        font-size: 2rem;
+      }
+
+      @media (max-width: 54.37em) {
+        main {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .gb_left {
+          top: -30%;
+          left: 31%;
+        }
+
+        .gb_left::after {
+          top: 75%;
+          left: -3.8%;
+
+          transform: rotate(-90deg);
+        }
+      }
+
+      @media (max-width: 45em) {
+        .gb_left {
+          top: 79%;
+          left: 15%;
+        }
+
+        .gb_left::after {
+          top: -26%;
+          left: 85.2%;
+          transform: rotate(90deg);
+        }
+      }
+      @media (max-width: 32.5em) {
+        .rec {
+          width: 20rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="fylo-container">
+        <img src="./images/logo.svg" alt="LOGO Icon" class="Logo-icon" />
+        <div class="icon-container">
+          <div class="img">
+            <img
+              src="./images/icon-document.svg"
+              alt="Document Icon"
+              class="doc-icon icon"
+            />
+          </div>
+          <div class="img">
+            <img
+              src="./images/icon-folder.svg"
+              alt="Folder Icon"
+              class="fol-icon icon"
+            />
+          </div>
+          <div class="img">
+            <img
+              src="./images/icon-upload.svg"
+              alt="Upload Icon"
+              class="upl-icon icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="rec">
+        <div class="gb_left">
+          <p class="pra_gb_left"><span>185</span> GB Left</p>
+        </div>
+        <p class="pra">You’ve used <span>815 GB</span> of your storage</p>
+        <div class="progress">
+          <div class="progress_bar"><div class="progress_point"></div></div>
+        </div>
+        <div class="from_to">
+          <p class="GB">0 GB</p>
+          <p class="GB">1000 GB</p>
+        </div>
+      </div>
+    </main>
+    <!-- You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB -->
+  </body>
+</html>
